@@ -27,25 +27,9 @@ const CreateEvent = () => {
     <div>
       <h2>Create Event</h2>
       <form onSubmit={handleCreate}>
-        <input
-          type="text"
-          placeholder="Event Name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          required
-        />
-        <textarea
-          placeholder="Description"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-          required
-        />
-        <input
-          type="date"
-          value={date}
-          onChange={(e) => setDate(e.target.value)}
-          required
-        />
+        <input type="text" placeholder="Event Name" value={name} onChange={(e) => setName(e.target.value)} required />
+        <textarea placeholder="Description" value={description} onChange={(e) => setDescription(e.target.value)} required />
+        <input type="date" value={date} onChange={(e) => setDate(e.target.value)} required />
         <button type="submit">Create</button>
       </form>
     </div>
