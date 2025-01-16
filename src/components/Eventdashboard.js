@@ -23,9 +23,9 @@ const EventDashboard = () => {
   return (
     <div>
       <h2>Event Dashboard</h2>
-      <Link to="/create-event">Create Event</Link>
-      <Link to="/login">Login</Link>
-      <Link to="/register">Register</Link>
+      <Link to="/create-event">Create Event</Link><br/>
+      <Link to="/login">Login</Link><br/>
+      <Link to="/register">Register</Link><br/>
       <ul>
         {events.map((event) => (
           <li key={event._id}>
