@@ -8,12 +8,14 @@ const CreateEvent = () => {
   const [date, setDate] = useState("");
   const navigate = useNavigate();
 
+  const API_URL = process.env.REACT_APP_API_BASE_URL;
+
   const handleCreate = async (e) => {
     e.preventDefault();
     try {
       const token = localStorage.getItem("token");
       await axios.post(
-        "http://localhost:5000/api/events",
+        `${API_URL}/api/events`,
         { name, description, date },
         { headers: { Authorization: `Bearer ${token}` } }
       );

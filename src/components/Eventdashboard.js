@@ -5,11 +5,13 @@ import { Link } from "react-router-dom";
 const EventDashboard = () => {
   const [events, setEvents] = useState([]);
 
+  const API_URL = process.env.REACT_APP_API_BASE_URL;
+
   useEffect(() => {
     const fetchEvents = async () => {
       try {
         const token = localStorage.getItem("token");
-        const res = await axios.get("http://localhost:5000/api/events", {
+        const res = await axios.get(`${API_URL}/api/events`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setEvents(res.data);
