@@ -7,12 +7,10 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const API_URL = process.env.REACT_APP_API_BASE_URL;
-
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(`${API_URL}/api/auth/login`, { email, password });
+      const res = await axios.post("https://event-backend-moqr.onrender.com/api/auth/login", { email, password });
       localStorage.setItem("token", res.data.token);
       navigate("/");
     } catch (err) {

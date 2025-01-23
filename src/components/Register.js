@@ -8,12 +8,10 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const API_URL = process.env.REACT_APP_API_BASE_URL;
-
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(`${API_URL}/api/auth/register`, { name, email, password });
+      await axios.post("https://event-backend-moqr.onrender.com/api/auth/register", { name, email, password });
       navigate("/login");
     } catch (err) {
       alert("Registration failed!");
